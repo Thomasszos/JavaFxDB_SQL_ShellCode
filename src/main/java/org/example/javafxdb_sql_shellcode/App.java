@@ -48,6 +48,8 @@ public class App extends Application {
             System.out.println("| To display all users,   press 'a' |");
             System.out.println("| To insert to the DB,    press 'i' |");
             System.out.println("| To query by name,       press 'q' |");
+            System.out.println("| To edit by name,        press 'p' |");
+            System.out.println("| To delete by name,      press 'd' |");
             System.out.println("| To exit,                press 'e' |");
             System.out.println("===================================");
             System.out.print("Enter your choice: ");
@@ -66,22 +68,30 @@ public class App extends Application {
                     break;
 
                 case 'i':
-                    System.out.print("Enter Name: ");
-                    String name = scan.next();
-                    System.out.print("Enter Email: ");
-                    String email = scan.next();
-                    System.out.print("Enter Phone: ");
-                    String phone = scan.next();
-                    System.out.print("Enter Address: ");
-                    String address = scan.next();
-                    System.out.print("Enter Password: ");
-                    String password = scan.next();
-                    cdbop.insertUser(name, email, phone, address, password); //Your insertUser method
+                    System.out.print("Enter First Name: ");
+                    String firstName = scan.next();
+                    System.out.print("Enter Last Name: ");
+                    String lastName = scan.next();
+                    System.out.print("Enter Department: ");
+                    String dept = scan.next();
+                    System.out.print("Enter Major: ");
+                    String major = scan.next();
+                   // cdbop.insertUser(firstName, lastName, dept, major); //Your insertUser method
                     break;
                 case 'q':
                     System.out.print("Enter the name to query: ");
                     String queryName = scan.next();
                     cdbop.queryUserByName(queryName); //Your queryUserByName method
+                    break;
+                case 'p':
+                    System.out.print("Enter the ID to edit: ");
+                    String editName = scan.next();
+                    //cdbop.editStudent(editName);
+                    break;
+                case 'd':
+                    System.out.print("Enter the name to delete: ");
+                    String deleteName = scan.next();
+                    cdbop.deleteStudent(deleteName);
                     break;
                 case 'e':
                     System.out.println("Exiting...");
